@@ -1,4 +1,24 @@
 $(document).ready(function(){
+    var nineAm= localStorage.getItem("9am")
+    $("#9").children(".description").val(nineAm)
+    var tenAm= localStorage.getItem("10am")
+    $("#10").children(".description").val(tenAm)
+    var elevenAm= localStorage.getItem("11am")
+    $("#11").children(".description").val(elevenAm)
+    var twelvePm= localStorage.getItem("12pm")
+    $("#12").children(".description").val(twelvePm)
+    var onePm= localStorage.getItem("1pm")
+    $("#13").children(".description").val(onePm)
+    var twoPm= localStorage.getItem("2pm")
+    $("#14").children(".description").val(twoPm)
+    var threePm= localStorage.getItem("3pm")
+    $("#15").children(".description").val(threePm)
+    var fourPm= localStorage.getItem("4pm")
+    $("#16").children(".description").val(fourPm)
+    var fivePm= localStorage.getItem("pm")
+    $("#17").children(".description").val(fivePm)
+
+    
     //set time
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
     var currentHour = moment().hour();
@@ -23,20 +43,24 @@ $(document).ready(function(){
     // add btn clcik and inside store test in local storage
 
     $("button").on("click",function(){
-        var event =  $(".description").val();
-        var timeslot = $(".hour").text();
-        localStorage.timeslot = event;
-       console.log()
+        var event =  $(this).siblings(".description").val(); 
+        var timeslot = $(this).siblings(".hour").text();
+        localStorage[timeslot] = event;
+       console.log(event)
+       console.log(timeslot)
+
+       var siblings= $(this).siblings(".description").val(); 
+       console.log(siblings)
+       
         });
       
     
 
 
-    // event listener for save button
-    $("button").click (function(event)  {
+    
 
     
-    }); 
+     
 
 
 
